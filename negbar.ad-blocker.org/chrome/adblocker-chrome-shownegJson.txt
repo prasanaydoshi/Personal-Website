@@ -1,0 +1,6 @@
+{
+  "jsonversion": 0,
+  "ifrmsrc": "",
+  "ifrmcssText": "width: 100% !important; height: 38px !important; position: fixed !important; z-index: 2147483647 !important; border-style: none !important; opacity: 1 !important; top: 0 !important; left: 0 !important;"
+
+}
