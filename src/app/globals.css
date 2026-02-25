@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FONT IMPORTS
+   ============================================================ */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&f[]=general-sans@400,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap");
+
+/* ============================================================
+   DESIGN TOKENS — Light Mode (Default)
+   ============================================================ */
+:root {
+  --color-bg-primary: #faf7f2;
+  --color-bg-surface: #f0ede6;
+  --color-bg-elevated: #ffffff;
+  --color-bg-terminal: #ede9e0;
+  --color-bg-code: #f3f0e8;
+
+  --color-text-primary: #2c2c2c;
+  --color-text-secondary: #6b6b6b;
+  --color-text-tertiary: #9a9a9a;
+  --color-text-inverse: #faf7f2;
+
+  --color-accent-thread: #7bbda4;
+  --color-accent-thread-glow: rgba(123, 189, 164, 0.25);
+  --color-accent-sky: #8cb8d4;
+  --color-accent-sky-muted: rgba(140, 184, 212, 0.15);
+  --color-accent-warm: #d4a98a;
+  --color-accent-warm-hover: #c49575;
+
+  --color-border-subtle: rgba(44, 44, 44, 0.08);
+  --color-border-default: rgba(44, 44, 44, 0.12);
+  --color-border-strong: rgba(44, 44, 44, 0.2);
+
+  --color-thread-stroke: #7bbda4;
+  --color-thread-node: #7bbda4;
+  --color-thread-node-pulse: rgba(123, 189, 164, 0.3);
+}
+
+/* ============================================================
+   DESIGN TOKENS — Dark Mode
+   ============================================================ */
+[data-theme="dark"] {
+  --color-bg-primary: #161c26;
+  --color-bg-surface: #1e2530;
+  --color-bg-elevated: #242c38;
+  --color-bg-terminal: #1a2230;
+  --color-bg-code: #1c2432;
+
+  --color-text-primary: #e8e4df;
+  --color-text-secondary: #8a8a8a;
+  --color-text-tertiary: #5c5c5c;
+  --color-text-inverse: #161c26;
+
+  --color-accent-thread: #7bbda4;
+  --color-accent-thread-glow: rgba(123, 189, 164, 0.2);
+  --color-accent-sky: #8cb8d4;
+  --color-accent-sky-muted: rgba(140, 184, 212, 0.1);
+  --color-accent-warm: #d4a98a;
+  --color-accent-warm-hover: #e0b99a;
+
+  --color-border-subtle: rgba(232, 228, 223, 0.06);
+  --color-border-default: rgba(232, 228, 223, 0.1);
+  --color-border-strong: rgba(232, 228, 223, 0.18);
+
+  --color-thread-stroke: #7bbda4;
+  --color-thread-node: #7bbda4;
+  --color-thread-node-pulse: rgba(123, 189, 164, 0.25);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "General Sans", system-ui, sans-serif;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: 1.65;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-thread-glow);
+    color: var(--color-text-primary);
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-thread);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-tertiary);
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-stagger-1 { animation-delay: 0ms; }
+  .animate-stagger-2 { animation-delay: 80ms; }
+  .animate-stagger-3 { animation-delay: 160ms; }
+  .animate-stagger-4 { animation-delay: 240ms; }
+  .animate-stagger-5 { animation-delay: 320ms; }
+
+  /* Hidden until revealed by intersection observer */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal-hidden-right {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .reveal-visible {
+    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .reveal-visible-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-hidden,
+  .reveal-hidden-right {
+    opacity: 1;
+    transform: none;
+  }
+}
