@@ -53,7 +53,7 @@ const otherProjects = [
     description: "Multi-security analysis across 44+ equities with ML predictions",
     tech: ["Python", "Plotly", "scikit-learn"],
     href: "#",
-    external: true,
+    external: false,
   },
   {
     name: "Reddit Sentiment Pipeline",

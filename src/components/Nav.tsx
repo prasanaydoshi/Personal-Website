@@ -63,7 +63,7 @@ export default function Nav() {
             className="font-heading font-bold text-lg tracking-tight"
             style={{ color: "var(--color-text-primary)" }}
           >
-            PYD
+            Prasana&apos;s Log
           </a>
 
           {/* Desktop links */}
