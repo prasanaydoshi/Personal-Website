@@ -88,12 +88,6 @@ export default function TerminalBoot({ onComplete }: TerminalBootProps) {
         <span className="w-3 h-3 rounded-full bg-[#FF6058]" />
         <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
         <span className="w-3 h-3 rounded-full bg-[#27CA40]" />
-        <span
-          className="ml-3 font-mono text-[10px] tracking-wider uppercase"
-          style={{ color: "var(--color-text-tertiary)" }}
-        >
-          My Log
-        </span>
       </div>
 
       {/* Terminal body */}
