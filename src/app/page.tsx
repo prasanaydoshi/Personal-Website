@@ -112,7 +112,7 @@ export default function Home() {
       <ScrollProgressBar />
       <ThreadSVG />
 
-      <main id="main-content" className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10 outline-none">
         {/* ============================================================
             ENTRY 000 — Hero / Boot
             ============================================================ */}

@@ -65,7 +65,7 @@ export default function ThreadSVG() {
   return (
     <svg
       ref={svgRef}
-      className="fixed left-[calc(50%-35rem)] top-0 w-[60px] pointer-events-none hidden lg:block"
+      className="fixed left-[calc(50%-40rem)] top-0 w-[60px] pointer-events-none hidden lg:block"
       style={{
         height: "100vh",
         zIndex: 1,

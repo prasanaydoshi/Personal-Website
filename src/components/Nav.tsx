@@ -31,6 +31,14 @@ export default function Nav() {
       {/* Skip to content */}
       <a
         href="#main-content"
+        onClick={(e) => {
+          e.preventDefault();
+          const main = document.getElementById("main-content");
+          if (main) {
+            main.focus();
+            main.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:rounded-md"
         style={{
           backgroundColor: "var(--color-accent-thread)",
@@ -63,7 +71,7 @@ export default function Nav() {
             className="font-heading font-bold text-lg tracking-tight"
             style={{ color: "var(--color-text-primary)" }}
           >
-            Prasana&apos;s Log
+            PYD
           </a>
 
           {/* Desktop links */}

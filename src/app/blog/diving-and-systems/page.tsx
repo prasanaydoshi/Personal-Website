@@ -5,7 +5,7 @@ export default function DivingAndSystems() {
   return (
     <>
       <Nav />
-      <main className="max-w-2xl mx-auto px-6 pt-32 pb-20">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto px-6 pt-32 pb-20 outline-none">
         <Link
           href="/blog"
           className="font-mono text-sm mb-8 inline-block transition-opacity hover:opacity-100"

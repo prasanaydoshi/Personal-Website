@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Annotation from "./Annotation";
 
 interface BlogPost {
@@ -41,13 +42,13 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
           </div>
 
           <h3 className="mb-2">
-            <a
+            <Link
               href={post.href}
               className="font-heading text-lg font-medium transition-colors duration-200 hover:underline hover:underline-offset-4"
               style={{ color: "var(--color-text-primary)" }}
             >
               {post.title}
-            </a>
+            </Link>
           </h3>
 
           <p
@@ -59,7 +60,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
         </article>
       ))}
 
-      <a
+      <Link
         href="/blog"
         className="inline-flex items-center gap-2 font-body text-base font-medium transition-all duration-200 group"
         style={{ color: "var(--color-accent-thread)" }}
@@ -68,7 +69,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
         <span className="transition-transform duration-200 group-hover:translate-x-1">
           →
         </span>
-      </a>
+      </Link>
     </div>
   );
 }

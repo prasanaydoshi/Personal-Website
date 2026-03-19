@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 
 const terminalLines = [
-  "> initializing log...",
+  "> prasana's log",
   "> name: Prasana",
   "> status: building things that matter",
   "> type: generalist — fintech · quant · full-stack",
@@ -92,7 +92,7 @@ export default function TerminalBoot({ onComplete }: TerminalBootProps) {
           className="ml-3 font-mono text-[10px] tracking-wider uppercase"
           style={{ color: "var(--color-text-tertiary)" }}
         >
-          initializing log
+          My Log
         </span>
       </div>
 

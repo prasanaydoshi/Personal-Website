@@ -90,11 +90,6 @@
     color: var(--color-text-primary);
     line-height: 1.65;
     transition: background-color 0.35s ease, color 0.35s ease;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='4' fill='none' stroke='%237bbda4' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='1.5' fill='%237bbda4'/%3E%3C/svg%3E") 10 10, auto;
-  }
-
-  a, button, [role="button"], input[type="submit"], select {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='6' fill='none' stroke='%237bbda4' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='1.5' fill='%237bbda4'/%3E%3C/svg%3E") 10 10, pointer;
   }
 
   h1, h2, h3, h4, h5, h6 {

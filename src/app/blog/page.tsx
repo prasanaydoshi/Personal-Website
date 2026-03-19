@@ -35,7 +35,7 @@ export default function BlogArchive() {
   return (
     <>
       <Nav />
-      <main className="max-w-2xl mx-auto px-6 pt-32 pb-20">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto px-6 pt-32 pb-20 outline-none">
         <h1
           className="font-heading font-bold text-3xl mb-2 tracking-tight"
           style={{ color: "var(--color-text-primary)" }}
