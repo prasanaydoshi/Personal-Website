@@ -231,31 +231,11 @@ export default function Home() {
               className="text-md leading-relaxed"
               style={{ color: "var(--color-text-primary)" }}
             >
-              I&apos;m Prasana — a generalist engineer who doesn&apos;t believe
-              in being one-dimensional. I build machine learning models,
-              automate data infrastructure, and ship full-stack applications.
-              When something needs to get done, I figure it out and deliver —
-              whether I&apos;ve done it before or not.
-            </p>
-            <p
-              className="text-md leading-relaxed"
-              style={{ color: "var(--color-text-primary)" }}
-            >
-              Right now I&apos;m interning at HSB (a Munich Re company) where
-              I&apos;ve built prediction models that cut error rates by more
-              than half and automated pipelines saving 150+ person-hours
-              monthly. I study Computer Science at the University of Waterloo
-              and I&apos;m targeting roles in fintech, quant, and big tech.
-            </p>
-            <p
-              className="text-md leading-relaxed"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              Beyond software, I have a deep interest in equities and
-              investment vehicles, and I&apos;m a NAUI Master Scuba Diver with
-              120+ logged dives and Teaching Assistant credentials. I believe
-              good software starts from trying to solve a real problem — not
-              from picking a shiny tech stack.
+              Hi, I&apos;m Prasana. I study Computer Science at the University
+              of Waterloo and Business at Wilfrid Laurier University. I love
+              building things that drive impact and help stakeholders.
+              Currently, I am interning at Munich Re and exploring some of the
+              latest Cafe&apos;s downtown.
             </p>
           </div>
         </LogEntry>
@@ -330,14 +310,9 @@ export default function Home() {
             className="text-md leading-relaxed"
             style={{ color: "var(--color-text-primary)" }}
           >
-            When I&apos;m not building software, I&apos;m probably 30 meters
-            underwater or reading 10-Ks. I hold NAUI Master Scuba Diver and
-            Teaching Assistant credentials — which means I&apos;ve spent
-            enough time managing risk at depth to know that preparation isn&apos;t
-            optional. I have a strong interest in equities and have built
-            analysis tools tracking 44+ securities with ML-driven predictions.
-            I think the best engineers are the ones with range — people who
-            bring perspectives from outside the codebase.
+            I enjoy exploring new AI tools, teaching scuba diving as a TA, or
+            spending time at the gym. I also love keeping up with equities,
+            investing, and the latest consumer tech.
           </p>
         </LogEntry>
 
