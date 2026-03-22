@@ -214,15 +214,14 @@ export default function Home() {
           aside={
             <div className="space-y-4 lg:mt-12">
               <Annotation type="note" label="Current">
-                Data Science Intern @ HSB (Munich Re)
+                Data @ Munich Re
               </Annotation>
               <Annotation type="note" label="Education">
-                University of Waterloo — CS
+                University of Waterloo & Wilfrid Laurier University — Double Degree (CS + Business)
               </Annotation>
               <Annotation type="note" label="Beyond code">
                 NAUI Master Scuba Diver · 120+ logged dives
               </Annotation>
-              <Annotation type="timestamp">2024 — Present</Annotation>
             </div>
           }
         >
@@ -236,6 +235,14 @@ export default function Home() {
               building things that drive impact and help stakeholders.
               Currently, I am interning at Munich Re and exploring some of the
               latest Cafe&apos;s downtown.
+            </p>
+            <p
+              className="text-md leading-relaxed"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              I enjoy exploring new AI tools, teaching scuba diving as a TA, or
+              spending time at the gym. I also love keeping up with equities,
+              investing, and the latest consumer tech.
             </p>
           </div>
         </LogEntry>
@@ -310,9 +317,10 @@ export default function Home() {
             className="text-md leading-relaxed"
             style={{ color: "var(--color-text-primary)" }}
           >
-            I enjoy exploring new AI tools, teaching scuba diving as a TA, or
-            spending time at the gym. I also love keeping up with equities,
-            investing, and the latest consumer tech.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
           </p>
         </LogEntry>
 

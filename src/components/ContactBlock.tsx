@@ -189,11 +189,11 @@ export default function ContactBlock() {
               Direct
             </span>
             <a
-              href="mailto:hello@pyd.dev"
+              href="mailto:prasanaydoshi@gmail.com"
               className="text-base font-medium transition-colors duration-200"
               style={{ color: "var(--color-accent-thread)" }}
             >
-              hello@pyd.dev
+              prasanaydoshi@gmail.com
             </a>
           </div>
 
@@ -207,7 +207,7 @@ export default function ContactBlock() {
             <div className="flex items-center gap-4">
               {/* GitHub */}
               <a
-                href="https://github.com"
+                href="https://github.com/prasanaydoshi"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"
@@ -234,7 +234,7 @@ export default function ContactBlock() {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/prasanaydoshi"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
