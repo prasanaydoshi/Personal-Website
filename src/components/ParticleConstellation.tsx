@@ -21,34 +21,19 @@ const PARTICLE_COLORS: [number, number, number][] = [
   [140, 184, 212], // sky
 ];
 
-const PARTICLE_COUNT = 30;
+const PARTICLE_COUNT = 35;
 const CONNECTION_DISTANCE = 110;
 const MOUSE_RADIUS = 120;
-const TEXT_ZONE = { xOffset: 30, widthPx: 520, yPercent: 0.2, heightPercent: 0.55 };
 
-function isInTextZone(x: number, y: number, canvasH: number): boolean {
-  const zoneY = canvasH * TEXT_ZONE.yPercent;
-  const zoneH = canvasH * TEXT_ZONE.heightPercent;
-  return x > TEXT_ZONE.xOffset && x < TEXT_ZONE.xOffset + TEXT_ZONE.widthPx && y > zoneY && y < zoneY + zoneH;
-}
+const TEXT_ZONE = {
+  left: 0.0,
+  top: 0.08,
+  right: 0.65,
+  bottom: 0.82,
+};
 
-function spawnParticle(w: number, h: number): Particle {
-  let x: number, y: number;
-  let attempts = 0;
-  do {
-    x = Math.random() * w;
-    y = Math.random() * h;
-    attempts++;
-  } while (isInTextZone(x, y, h) && attempts < 50);
-
-  return {
-    x,
-    y,
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5,
-    color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
-    radius: 1.3 + Math.random() * 1.5,
-  };
+function isInZone(x: number, y: number, zL: number, zT: number, zR: number, zB: number): boolean {
+  return x > zL && x < zR && y > zT && y < zB;
 }
 
 export default function ParticleConstellation({ className }: ParticleConstellationProps) {
@@ -83,31 +68,48 @@ export default function ParticleConstellation({ className }: ParticleConstellati
       ctx!.scale(2, 2);
     }
 
-    function init() {
-      resize();
-      particles.length = 0;
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push(spawnParticle(w, h));
-      }
-    }
-
-    function getThemeParams() {
-      const theme = document.documentElement.getAttribute("data-theme");
-      const isDark = theme === "dark";
+    function zoneCoords() {
       return {
-        baseAlpha: isDark ? 0.35 : 0.25,
-        lineFactor: isDark ? 0.07 : 0.12,
+        zL: TEXT_ZONE.left * w,
+        zT: TEXT_ZONE.top * h,
+        zR: TEXT_ZONE.right * w,
+        zB: TEXT_ZONE.bottom * h,
       };
     }
 
+    function init() {
+      resize();
+      particles.length = 0;
+      const { zL, zT, zR, zB } = zoneCoords();
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        let x: number, y: number;
+        let tries = 0;
+        do {
+          x = Math.random() * w;
+          y = Math.random() * h;
+          tries++;
+        } while (isInZone(x, y, zL, zT, zR, zB) && tries < 80);
+
+        particles.push({
+          x,
+          y,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+          radius: 1.3 + Math.random() * 1.5,
+        });
+      }
+    }
+
     function draw() {
-      const { baseAlpha, lineFactor } = getThemeParams();
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      const baseAlpha = isDark ? 0.35 : 0.25;
+      const lineColor = isDark ? "255, 255, 255" : "0, 0, 0";
+      const lineFactor = isDark ? 0.09 : 0.15;
+
       ctx!.clearRect(0, 0, w, h);
 
-      const zoneY = h * TEXT_ZONE.yPercent;
-      const zoneH = h * TEXT_ZONE.heightPercent;
-      const zoneCX = TEXT_ZONE.xOffset + TEXT_ZONE.widthPx / 2;
-      const zoneCY = zoneY + zoneH / 2;
+      const { zL, zT, zR, zB } = zoneCoords();
 
       // Update particles
       for (const p of particles) {
@@ -115,19 +117,24 @@ export default function ParticleConstellation({ className }: ParticleConstellati
           p.x += p.vx;
           p.y += p.vy;
 
-          // Bounce off edges
+          // Bounce off canvas edges
           if (p.x < 0 || p.x > w) p.vx *= -1;
           if (p.y < 0 || p.y > h) p.vy *= -1;
           p.x = Math.max(0, Math.min(w, p.x));
           p.y = Math.max(0, Math.min(h, p.y));
 
-          // Text zone avoidance
-          if (isInTextZone(p.x, p.y, h)) {
-            const dx = p.x - zoneCX;
-            const dy = p.y - zoneCY;
-            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            p.vx += (dx / dist) * 0.07;
-            p.vy += (dy / dist) * 0.07;
+          // Hard bounding box — eject to nearest edge
+          if (isInZone(p.x, p.y, zL, zT, zR, zB)) {
+            const dLeft = p.x - zL;
+            const dRight = zR - p.x;
+            const dTop = p.y - zT;
+            const dBottom = zB - p.y;
+            const minDist = Math.min(dLeft, dRight, dTop, dBottom);
+
+            if (minDist === dLeft) { p.x = zL - 1; p.vx = -Math.abs(p.vx); }
+            else if (minDist === dRight) { p.x = zR + 1; p.vx = Math.abs(p.vx); }
+            else if (minDist === dTop) { p.y = zT - 1; p.vy = -Math.abs(p.vy); }
+            else { p.y = zB + 1; p.vy = Math.abs(p.vy); }
           }
 
           // Clamp velocity
@@ -146,11 +153,16 @@ export default function ParticleConstellation({ className }: ParticleConstellati
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < CONNECTION_DISTANCE) {
+            // Skip lines whose midpoint crosses the text zone
+            const midX = (particles[i].x + particles[j].x) / 2;
+            const midY = (particles[i].y + particles[j].y) / 2;
+            if (isInZone(midX, midY, zL, zT, zR, zB)) continue;
+
             const alpha = lineFactor * (1 - dist / CONNECTION_DISTANCE);
             ctx!.beginPath();
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);
-            ctx!.strokeStyle = `rgba(123, 189, 164, ${alpha})`;
+            ctx!.strokeStyle = `rgba(${lineColor}, ${alpha})`;
             ctx!.lineWidth = 0.5;
             ctx!.stroke();
           }
@@ -182,7 +194,7 @@ export default function ParticleConstellation({ className }: ParticleConstellati
           ctx!.beginPath();
           ctx!.moveTo(p.x, p.y);
           ctx!.lineTo(mouseX, mouseY);
-          ctx!.strokeStyle = `rgba(123, 189, 164, ${lineAlpha})`;
+          ctx!.strokeStyle = `rgba(${lineColor}, ${lineAlpha})`;
           ctx!.lineWidth = 0.5;
           ctx!.stroke();
         }
