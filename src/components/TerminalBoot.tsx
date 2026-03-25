@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 
 const terminalLines = [
   "> Prasana's log",
-  "> Prasana",
   "> status: building things that matter",
   "> lorem ipsum",
   "> ready. ✓",

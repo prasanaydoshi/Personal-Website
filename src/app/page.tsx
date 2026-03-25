@@ -214,10 +214,10 @@ export default function Home() {
           aside={
             <div className="space-y-4 lg:mt-12">
               <Annotation type="note" label="Current">
-                Data @ Munich Re
+                Data Analyst @ Munich Re
               </Annotation>
               <Annotation type="note" label="Education">
-                University of Waterloo & Wilfrid Laurier University — Double Degree (CS + Business)
+                CS @ University of Waterloo & BBA @ Wilfrid Laurier University
               </Annotation>
               <Annotation type="note" label="Beyond code">
                 NAUI Master Scuba Diver · 120+ logged dives
@@ -240,9 +240,9 @@ export default function Home() {
               className="text-md leading-relaxed"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              I enjoy exploring new AI tools, teaching scuba diving as a TA, or
-              spending time at the gym. I also love keeping up with equities,
-              investing, and the latest consumer tech.
+              Outside of work, I enjoy exploring new AI tools, teaching scuba
+              diving as a TA, or spending time at the gym. I also love keeping
+              up with equities, investing, and the latest consumer tech.
             </p>
           </div>
         </LogEntry>
