@@ -84,13 +84,12 @@ export default function TerminalBoot({ onComplete }: TerminalBootProps) {
         Hey, I am{" "}
         <span
           style={{
-            color: "var(--color-name-highlight)",
+            color: "#7BBDA4",
             display: "inline-block",
           }}
         >
           Prasana Y Doshi
         </span>
-        <span style={{ color: "var(--color-accent-thread)" }}>.</span>
       </h1>
 
       {/* Tagline */}

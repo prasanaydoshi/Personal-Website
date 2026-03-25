@@ -37,7 +37,6 @@
   --color-thread-stroke: #7bbda4;
   --color-thread-node: #7bbda4;
   --color-thread-node-pulse: rgba(123, 189, 164, 0.3);
-  --color-name-highlight: #c8b89a;
 }
 
 /* ============================================================
@@ -69,7 +68,6 @@
   --color-thread-stroke: #7bbda4;
   --color-thread-node: #7bbda4;
   --color-thread-node-pulse: rgba(123, 189, 164, 0.25);
-  --color-name-highlight: #e8d5bc;
 }
 
 /* ============================================================

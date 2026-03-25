@@ -126,7 +126,7 @@ export default function Home() {
 
           {/* CTA buttons — fade in after intro */}
           <div
-            className="flex flex-col sm:flex-row items-start gap-4 mt-10 ml-0 max-w-[640px]"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 max-w-[640px] mx-auto"
             style={{
               opacity: terminalDone ? 1 : 0,
               transform: terminalDone ? "translateY(0)" : "translateY(12px)",
@@ -138,8 +138,8 @@ export default function Home() {
               download
               className="px-6 py-3 rounded-md text-base font-medium transition-all duration-200 hover:-translate-y-[1px]"
               style={{
-                backgroundColor: "var(--color-name-highlight)",
-                color: "#2C2C2C",
+                backgroundColor: "#7BBDA4",
+                color: "#1a1a1a",
                 boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
               }}
             >
