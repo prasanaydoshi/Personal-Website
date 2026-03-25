@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "PYD — Prasana | Developer Portfolio",
+  title: "PRHD — Prasana | Developer Portfolio",
   description:
     "Engineer building at the intersection of fintech, quant, and full-stack. Portfolio of Prasana — builder, storyteller, operator.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Prasana" }],
   openGraph: {
-    title: "PYD — Prasana | Developer Portfolio",
+    title: "PRHD — Prasana | Developer Portfolio",
     description:
       "Engineer building at the intersection of fintech, quant, and full-stack.",
     type: "website",

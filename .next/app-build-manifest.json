@@ -12,30 +12,8 @@
       "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
       "static/chunks/117-db0f7e2a3f38fab2.js",
       "static/chunks/main-app-144b5d2db1ee0b78.js",
-      "static/css/35921cb49c6cb3be.css",
+      "static/css/b0da7b0e2c2fedc6.css",
       "static/chunks/app/layout-4b2f13c837bc0d7b.js"
-    ],
-    "/blog/user-centric-software/page": [
-      "static/chunks/webpack-616e068a201ad621.js",
-      "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
-      "static/chunks/117-db0f7e2a3f38fab2.js",
-      "static/chunks/main-app-144b5d2db1ee0b78.js",
-      "static/chunks/app/blog/user-centric-software/page-bc9ce6ce2de1251f.js"
-    ],
-    "/blog/generalist-interviews/page": [
-      "static/chunks/webpack-616e068a201ad621.js",
-      "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
-      "static/chunks/117-db0f7e2a3f38fab2.js",
-      "static/chunks/main-app-144b5d2db1ee0b78.js",
-      "static/chunks/app/blog/generalist-interviews/page-4dc2a9373b3cec54.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-616e068a201ad621.js",
-      "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
-      "static/chunks/117-db0f7e2a3f38fab2.js",
-      "static/chunks/main-app-144b5d2db1ee0b78.js",
-      "static/chunks/972-0f1790c0da4ba333.js",
-      "static/chunks/app/page-e5311b8c1aa0df46.js"
     ],
     "/blog/page": [
       "static/chunks/webpack-616e068a201ad621.js",
@@ -43,14 +21,36 @@
       "static/chunks/117-db0f7e2a3f38fab2.js",
       "static/chunks/main-app-144b5d2db1ee0b78.js",
       "static/chunks/972-0f1790c0da4ba333.js",
-      "static/chunks/app/blog/page-ef921a5c04052a3e.js"
+      "static/chunks/app/blog/page-8463b6bc65dc30b5.js"
     ],
     "/blog/diving-and-systems/page": [
       "static/chunks/webpack-616e068a201ad621.js",
       "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
       "static/chunks/117-db0f7e2a3f38fab2.js",
       "static/chunks/main-app-144b5d2db1ee0b78.js",
-      "static/chunks/app/blog/diving-and-systems/page-d46a4732c9804e76.js"
+      "static/chunks/app/blog/diving-and-systems/page-542c6bfa171fd6c6.js"
+    ],
+    "/blog/user-centric-software/page": [
+      "static/chunks/webpack-616e068a201ad621.js",
+      "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
+      "static/chunks/117-db0f7e2a3f38fab2.js",
+      "static/chunks/main-app-144b5d2db1ee0b78.js",
+      "static/chunks/app/blog/user-centric-software/page-d257901643af9efc.js"
+    ],
+    "/blog/generalist-interviews/page": [
+      "static/chunks/webpack-616e068a201ad621.js",
+      "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
+      "static/chunks/117-db0f7e2a3f38fab2.js",
+      "static/chunks/main-app-144b5d2db1ee0b78.js",
+      "static/chunks/app/blog/generalist-interviews/page-6581cf4d96d055e2.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-616e068a201ad621.js",
+      "static/chunks/fd9d1056-f8a2d551cbb94c85.js",
+      "static/chunks/117-db0f7e2a3f38fab2.js",
+      "static/chunks/main-app-144b5d2db1ee0b78.js",
+      "static/chunks/972-0f1790c0da4ba333.js",
+      "static/chunks/app/page-c929957367354f0d.js"
     ]
   }
 }

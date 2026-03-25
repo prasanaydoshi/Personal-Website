@@ -51,7 +51,7 @@ export default function Nav() {
             className="font-heading font-bold text-lg tracking-tight"
             style={{ color: "var(--color-text-primary)" }}
           >
-            PYD
+            PRHD
           </a>
 
           {/* Desktop links */}

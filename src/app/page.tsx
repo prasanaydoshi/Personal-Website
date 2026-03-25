@@ -11,6 +11,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ProjectRow from "@/components/ProjectRow";
 import BlogPreview from "@/components/BlogPreview";
 import ContactBlock from "@/components/ContactBlock";
+import ParticleConstellation from "@/components/ParticleConstellation";
 
 // ── Placeholder data (replace with your real content) ──────────────
 
@@ -116,7 +117,11 @@ export default function Home() {
         {/* ============================================================
             ENTRY 000 — Hero / Boot
             ============================================================ */}
-        <section className="min-h-[100vh] flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-24 pb-16 max-w-content mx-auto">
+        <section className="min-h-[100vh] flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-24 pb-16 max-w-content mx-auto relative overflow-hidden">
+          {/* Particle background — desktop only */}
+          <ParticleConstellation className="absolute inset-0 z-0 hidden md:block" />
+
+          <div className="relative z-10">
           <TerminalBoot onComplete={() => setTerminalDone(true)} />
 
           {/* CTA buttons — fade in after intro */}
@@ -133,7 +138,7 @@ export default function Home() {
               download
               className="px-6 py-3 rounded-md text-base font-medium transition-all duration-200 hover:-translate-y-[1px]"
               style={{
-                backgroundColor: "var(--color-accent-warm)",
+                backgroundColor: "var(--color-name-highlight)",
                 color: "#2C2C2C",
                 boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
               }}
@@ -184,6 +189,7 @@ export default function Home() {
                 />
               </svg>
             </div>
+          </div>
           </div>
         </section>
 
@@ -322,7 +328,7 @@ export default function Home() {
             className="font-mono text-sm"
             style={{ color: "var(--color-text-tertiary)" }}
           >
-            {"> end of log. // PYD"}
+            {"> end of log. // PRHD"}
           </p>
           <p
             className="font-mono text-[11px] mt-3"
