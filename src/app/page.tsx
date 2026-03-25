@@ -116,65 +116,48 @@ export default function Home() {
         {/* ============================================================
             ENTRY 000 — Hero / Boot
             ============================================================ */}
-        <section className="min-h-[100vh] flex flex-col items-center justify-center px-4 md:px-8 pt-24 pb-16">
+        <section className="min-h-[100vh] flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-24 pb-16 max-w-content mx-auto">
           <TerminalBoot onComplete={() => setTerminalDone(true)} />
 
-          {/* Hero content — fades in after terminal */}
+          {/* CTA buttons — fade in after intro */}
           <div
-            className="mt-12 text-center max-w-2xl mx-auto transition-all duration-700"
+            className="flex flex-col sm:flex-row items-start gap-4 mt-10 ml-0 max-w-[640px]"
             style={{
               opacity: terminalDone ? 1 : 0,
-              transform: terminalDone ? "translateY(0)" : "translateY(20px)",
-              transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+              transform: terminalDone ? "translateY(0)" : "translateY(12px)",
+              transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s",
             }}
           >
-            <h1
-              className="font-heading font-bold text-4xl md:text-5xl mb-4 tracking-tight"
-              style={{ color: "var(--color-text-primary)" }}
+            <a
+              href="/resume.pdf"
+              download
+              className="px-6 py-3 rounded-md text-base font-medium transition-all duration-200 hover:-translate-y-[1px]"
+              style={{
+                backgroundColor: "var(--color-accent-warm)",
+                color: "#2C2C2C",
+                boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+              }}
             >
-              Prasana
-            </h1>
-            <p
-              className="text-lg md:text-xl mb-8 leading-relaxed"
-              style={{ color: "var(--color-text-secondary)" }}
+              Download Resume
+            </a>
+            <a
+              href="#entry-006"
+              className="px-6 py-3 rounded-md text-base font-medium transition-all duration-200"
+              style={{
+                border: "1px solid var(--color-border-default)",
+                color: "var(--color-text-primary)",
+              }}
             >
-              Generalist engineer who figures it out and delivers.
-              <br className="hidden md:block" />
-              Fintech · Quant · Full-Stack.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="/resume.pdf"
-                download
-                className="px-6 py-3 rounded-md text-base font-medium transition-all duration-200 hover:-translate-y-[1px]"
-                style={{
-                  backgroundColor: "var(--color-accent-warm)",
-                  color: "#2C2C2C",
-                  boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
-                }}
-              >
-                Download Resume
-              </a>
-              <a
-                href="#entry-006"
-                className="px-6 py-3 rounded-md text-base font-medium transition-all duration-200"
-                style={{
-                  border: "1px solid var(--color-border-default)",
-                  color: "var(--color-text-primary)",
-                }}
-              >
-                Get in Touch
-              </a>
-            </div>
+              Get in Touch
+            </a>
           </div>
 
           {/* Scroll indicator */}
           <div
-            className="mt-16 transition-all duration-700"
+            className="mt-auto pt-12 flex justify-center transition-all duration-700"
             style={{
               opacity: terminalDone ? 0.5 : 0,
-              transitionDelay: "400ms",
+              transitionDelay: "600ms",
             }}
           >
             <div className="flex flex-col items-center gap-2">

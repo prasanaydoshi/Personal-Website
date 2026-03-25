@@ -1,18 +1,12 @@
 import Nav from "@/components/Nav";
-import Link from "next/link";
+import BackButton from "@/components/BackButton";
 
 export default function GeneralistInterviews() {
   return (
     <>
       <Nav />
       <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto px-6 pt-32 pb-20 outline-none">
-        <Link
-          href="/"
-          className="font-mono text-sm mb-8 inline-block transition-opacity hover:opacity-100"
-          style={{ color: "var(--color-accent-thread)", opacity: 0.7 }}
-        >
-          &larr; Back to main page
-        </Link>
+        <BackButton />
 
         <header className="mb-10">
           <time

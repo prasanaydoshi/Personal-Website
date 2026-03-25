@@ -1,126 +1,106 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-
-const terminalLines = [
-  "> Prasana's log",
-  "> status: building things that matter",
-  "> lorem ipsum",
-  "> ready. ✓",
-];
-
-const CHAR_DELAY = 45; // ms per character
-const LINE_PAUSE = 350; // ms between lines
-const END_PAUSE = 600; // ms after final line before content reveals
+import { useState, useEffect } from "react";
 
 interface TerminalBootProps {
   onComplete?: () => void;
 }
 
 export default function TerminalBoot({ onComplete }: TerminalBootProps) {
-  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [currentChar, setCurrentChar] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-
-  // Check reduced motion
+  const [phase, setPhase] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) {
       setReducedMotion(true);
-      setDisplayedLines(terminalLines);
-      setIsComplete(true);
+      setPhase(3);
       onComplete?.();
+      return;
     }
+
+    const timers = [
+      setTimeout(() => setPhase(1), 200),
+      setTimeout(() => setPhase(2), 800),
+      setTimeout(() => {
+        setPhase(3);
+        onComplete?.();
+      }, 1400),
+    ];
+
+    return () => timers.forEach(clearTimeout);
   }, [onComplete]);
 
-  // Typing effect
-  useEffect(() => {
-    if (reducedMotion) return;
-    if (currentLine >= terminalLines.length) {
-      const timeout = setTimeout(() => {
-        setIsComplete(true);
-        onComplete?.();
-      }, END_PAUSE);
-      return () => clearTimeout(timeout);
-    }
-
-    const line = terminalLines[currentLine];
-    if (currentChar <= line.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedLines((prev) => {
-          const next = [...prev];
-          next[currentLine] = line.substring(0, currentChar);
-          return next;
-        });
-        setCurrentChar((c) => c + 1);
-      }, currentChar === 0 ? LINE_PAUSE : CHAR_DELAY);
-      return () => clearTimeout(timeout);
-    } else {
-      setCurrentLine((l) => l + 1);
-      setCurrentChar(0);
-    }
-  }, [currentLine, currentChar, reducedMotion, onComplete]);
-
-  // Cursor blink
-  useEffect(() => {
-    if (isComplete) return;
-    const interval = setInterval(() => setShowCursor((c) => !c), 530);
-    return () => clearInterval(interval);
-  }, [isComplete]);
+  const instant = reducedMotion;
 
   return (
-    <div
-      className="w-full max-w-[560px] mx-auto rounded-lg overflow-hidden"
-      style={{
-        backgroundColor: "var(--color-bg-terminal)",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
-      }}
-    >
-      {/* Terminal header dots */}
+    <div className="w-full max-w-[640px] mx-auto relative">
+      {/* Decorative accent line */}
       <div
-        className="flex items-center gap-2 px-4 py-3"
-        style={{ borderBottom: "1px solid var(--color-border-subtle)" }}
-      >
-        <span className="w-3 h-3 rounded-full bg-[#FF6058]" />
-        <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-        <span className="w-3 h-3 rounded-full bg-[#27CA40]" />
-      </div>
+        className="absolute -left-4 top-0 bottom-0 w-[2px]"
+        style={{
+          background: `linear-gradient(to bottom, var(--color-accent-thread), transparent)`,
+          opacity: phase >= 1 || instant ? 0.6 : 0,
+          transition: instant ? "none" : "opacity 0.8s ease",
+        }}
+      />
 
-      {/* Terminal body */}
-      <div className="px-5 py-4 min-h-[180px]" aria-live="polite">
-        {displayedLines.map((line, i) => (
-          <div
+      {/* Name */}
+      <h1
+        className="font-heading font-bold tracking-tight mb-5"
+        style={{
+          fontSize: "clamp(2rem, 5vw, 3.2rem)",
+          lineHeight: 1.1,
+          color: "var(--color-text-primary)",
+          opacity: phase >= 1 || instant ? 1 : 0,
+          transform: phase >= 1 || instant ? "translateY(0)" : "translateY(16px)",
+          transition: instant ? "none" : "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      >
+        Hey, I am{" "}
+        <span
+          style={{
+            color: "var(--color-accent-warm)",
+            display: "inline-block",
+          }}
+        >
+          Prasana Y Doshi
+        </span>
+        <span style={{ color: "var(--color-accent-thread)" }}>.</span>
+      </h1>
+
+      {/* Tagline */}
+      <p
+        className="text-lg md:text-xl leading-relaxed max-w-[480px]"
+        style={{
+          color: "var(--color-text-secondary)",
+          opacity: phase >= 2 || instant ? 1 : 0,
+          transform: phase >= 2 || instant ? "translateY(0)" : "translateY(12px)",
+          transition: instant ? "none" : "all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s",
+        }}
+      >
+        Equal parts curious, caffeinated, and crafty.
+      </p>
+
+      {/* Decorative dots */}
+      <div
+        className="flex items-center gap-2 mt-6"
+        style={{
+          opacity: phase >= 3 || instant ? 1 : 0,
+          transition: instant ? "none" : "opacity 0.5s ease 0.2s",
+        }}
+      >
+        {[
+          "var(--color-accent-thread)",
+          "var(--color-accent-warm)",
+          "var(--color-accent-sky)",
+        ].map((color, i) => (
+          <span
             key={i}
-            className="font-mono text-sm leading-relaxed"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            {line}
-            {/* Show cursor at end of current typing line */}
-            {i === currentLine && !isComplete && (
-              <span
-                className="inline-block w-[8px] h-[16px] ml-[1px] align-middle"
-                style={{
-                  backgroundColor: showCursor
-                    ? "var(--color-accent-thread)"
-                    : "transparent",
-                  transition: "background-color 0.1s",
-                }}
-              />
-            )}
-          </div>
+            className="w-[6px] h-[6px] rounded-full"
+            style={{ backgroundColor: color }}
+          />
         ))}
-        {/* Cursor after completion */}
-        {isComplete && (
-          <div className="font-mono text-sm leading-relaxed mt-1">
-            <span
-              className="inline-block w-[8px] h-[16px] align-middle animate-cursor-blink"
-              style={{ backgroundColor: "var(--color-accent-thread)" }}
-            />
-          </div>
-        )}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 export const metadata: Metadata = {
   title: "PYD — Prasana | Developer Portfolio",
   description:
-    "Generalist engineer building at the intersection of fintech, quant, and full-stack. Portfolio of Prasana — builder, storyteller, operator.",
+    "Engineer building at the intersection of fintech, quant, and full-stack. Portfolio of Prasana — builder, storyteller, operator.",
   keywords: [
     "developer",
     "portfolio",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PYD — Prasana | Developer Portfolio",
     description:
-      "Generalist engineer building at the intersection of fintech, quant, and full-stack.",
+      "Engineer building at the intersection of fintech, quant, and full-stack.",
     type: "website",
   },
 };
