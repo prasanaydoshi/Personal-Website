@@ -46,12 +46,8 @@ export default function Nav() {
           aria-label="Main navigation"
         >
           {/* Wordmark */}
-          <a
-            href="#"
-            className="font-heading font-bold text-lg tracking-tight"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            PRHD
+          <a href="/" aria-label="PRHD — Home">
+            <img src="/logo.svg" alt="PRHD logo" className="h-7 w-auto" />
           </a>
 
           {/* Desktop links */}
