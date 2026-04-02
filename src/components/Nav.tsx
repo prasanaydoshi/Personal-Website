@@ -47,11 +47,10 @@ export default function Nav() {
         >
           {/* Wordmark */}
           <a href="/" aria-label="PRHD — Home" className="flex items-center">
-            <object
-              data="/logo.svg"
-              type="image/svg+xml"
-              className="h-7 w-auto pointer-events-none"
-              aria-label="PRHD logo"
+            <img
+              src="/logo.svg"
+              alt="PRHD logo"
+              className="h-7 w-auto"
             />
           </a>
 
