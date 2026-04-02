@@ -50,7 +50,7 @@ export default function Nav() {
             <img
               src="/logo.svg"
               alt="PRHD logo"
-              className="h-7 w-auto"
+              className="h-8 w-auto"
             />
           </a>
 
