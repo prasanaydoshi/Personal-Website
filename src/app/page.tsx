@@ -29,7 +29,20 @@ const featuredProjects = [
       { label: "MAPE improvement", value: "19% → 7%" },
       { label: "Records processed", value: "50,000+" },
     ],
-    imageAlt: "Model dashboard screenshot",
+  },
+  {
+    title: "Reddit Sentiment Analysis Platform",
+    context:
+      "Needed a way to gauge real-time public sentiment across subreddits for market and brand analysis — no existing internal tool supported this at scale.",
+    approach:
+      "Built a full-stack pipeline that ingests subreddit data via the Reddit API, runs inference through a fine-tuned DistilBERT model, and stores results in PostgreSQL. Created a React dashboard for trend visualization and filtering by subreddit, time range, and sentiment polarity.",
+    outcome:
+      "Deployed a working end-to-end platform capable of processing thousands of posts per hour with real-time sentiment scoring and interactive dashboards.",
+    tech: ["Python", "React", "HuggingFace", "PostgreSQL", "FastAPI"],
+    metrics: [
+      { label: "Throughput", value: "1,000+ posts/hr" },
+      { label: "Model", value: "Fine-tuned DistilBERT" },
+    ],
   },
   {
     title: "Automated Reporting Pipeline",
@@ -44,7 +57,6 @@ const featuredProjects = [
       { label: "Hours saved monthly", value: "150+" },
       { label: "Error rate", value: "→ 0 manual errors" },
     ],
-    imageAlt: "Pipeline architecture diagram",
   },
 ];
 
@@ -219,11 +231,10 @@ export default function Home() {
               className="text-md leading-relaxed"
               style={{ color: "var(--color-text-primary)" }}
             >
-              Hi, I&apos;m Prasana. I study Computer Science at the University
-              of Waterloo and Business at Wilfrid Laurier University. I love
-              building things that drive impact and help stakeholders.
-              Currently, I am interning at Munich Re and exploring some of the
-              latest Cafe&apos;s downtown.
+              Hi, I&apos;m Prasana. I study Computer Science at the University of
+              Waterloo and Business at Wilfrid Laurier University. I love building
+              things that drive impact and help stakeholders. Currently, I am
+              interning at Munich Re.
             </p>
             <p
               className="text-md leading-relaxed"
@@ -245,7 +256,6 @@ export default function Home() {
               <ProjectCard
                 key={i}
                 {...project}
-                reverse={i % 2 !== 0}
               />
             ))}
           </div>
@@ -287,17 +297,17 @@ export default function Home() {
         <LogEntry
           number="005"
           id="entry-005"
-          title="Beyond the Terminal"
+          title="Away from the Screen"
           aside={
             <div className="space-y-4 lg:mt-12">
               <Annotation type="metric" label="Dives logged">
                 120+
               </Annotation>
-              <Annotation type="metric" label="Certification">
-                NAUI Master Diver
+              <Annotation type="metric" label="Current pursuit">
+                Private pilot licence
               </Annotation>
-              <Annotation type="metric" label="Securities analyzed">
-                44+
+              <Annotation type="metric" label="Stage background">
+                Regional theatre
               </Annotation>
             </div>
           }
@@ -306,10 +316,12 @@ export default function Home() {
             className="text-md leading-relaxed"
             style={{ color: "var(--color-text-primary)" }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            I am usually doing something that gets me out of routine. In the summers,
+            that often means diving, and lately it also means working toward my private
+            pilot licence. I have also spent a big part of my life around public
+            speaking and theatre, with years of performing in regional plays shaping how
+            I communicate and carry myself. Beyond that, I enjoy hiking, travelling, and
+            exploring new places whenever I get the chance.
           </p>
         </LogEntry>
 

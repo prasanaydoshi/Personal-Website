@@ -1,97 +1,231 @@
-# PRHD Logo Replacement Directive (v2)
+# Personal Website Change Request
 
-**Date:** April 1, 2026  
-**Scope:** Replace all instances of the "PRHD" text wordmark and favicon with the SVG logo file. Fix navigation bug on subpages. Fix SVG viewBox so logo is actually visible.
+Repo: `prasanaydoshi/Personal-Website`
 
----
+Goal: keep the current visual style and overall UI, but make the copy more personal, clean up placeholder content, remove fake visuals for work-related projects, and add a simple tabbed resume switcher.
 
-## Critical: SVG viewBox Fix
+## 1) Hero rotating lines
 
-The current `logo.svg` has a viewBox of `0 0 2666.6667 2666.6667` but the actual logo artwork (the masked teal letterforms) only occupies a ~500×558 region near the center. When rendered at nav height (~28px), the letters are sub-pixel and invisible.
+File: `src/components/TerminalBoot.tsx`
 
-**Fix:** Open `logo.svg` and change the viewBox to crop to the content bounds. Replace:
-
-```xml
-viewBox="0 0 2666.6667 2666.6667"
-```
-
-With (adding ~20px padding around the computed content area):
-
-```xml
-viewBox="1059 1033 540 600"
-```
-
-Also update the `width` and `height` attributes to match the new aspect ratio, or remove them entirely and let CSS control sizing:
-
-```xml
-<!-- Remove these fixed dimensions -->
-<!-- width="2666.6667" height="2666.6667" -->
-```
-
-**Alternative (recommended):** Open the SVG in Inkscape → select all content → `Edit > Resize Page to Selection` (or `Shift+Ctrl+E`) → Save. This auto-crops the viewBox to the artwork bounds.
-
----
-
-## Theme-Awareness Note
-
-The logo uses `fill:#ffffff` (white) paths inside a `<mask>` to reveal a `fill:#7bbda4` (teal) rectangle. This means the logo will always render as teal regardless of theme — it won't adapt to light/dark mode automatically.
-
-**If you want theme-adaptive color:**  
-You would need to refactor the SVG to use `currentColor` instead of the mask+rectangle technique. This is a non-trivial change given the Inkscape-generated mask structure. For now, the teal logo works on both light and dark backgrounds since `#7bbda4` has sufficient contrast against both.
-
----
-
-## Files to Modify
-
-### 1. `src/components/Nav.tsx`
-
-**Bug fix:** Change `href="#"` to `href="/"` on the wordmark link so it navigates home from any page (currently broken on `/blog/*` routes — clicking PRHD on a blog post just scrolls to top of that page instead of going home).
-
-**Logo swap:** Replace the plain-text "PRHD" with an `<img>` of the cropped SVG logo.
+Replace the current `identities` array with this:
 
 ```tsx
-// BEFORE
-<a href="#" className="font-heading font-bold text-lg tracking-tight"
-   style={{ color: "var(--color-text-primary)" }}>
-  PRHD
-</a>
-
-// AFTER
-<a href="/" aria-label="PRHD — Home">
-  <img src="/logo.svg" alt="PRHD logo" className="h-7 w-auto" />
-</a>
+const identities = [
+  "diving into data pipelines at Munich Re",
+  "building ML models that move the needle",
+  "deep in data, deeper in curiosity",
+  "analyzing equities",
+  "planning my next dive trip",
+  "prompting claude code",
+  "120+ dives deep, still descending",
+];
 ```
 
-### 2. `src/app/layout.tsx`
+Notes:
+- Keep the current animation and switching behavior exactly the same.
+- Only update the content in the array.
 
-No change needed — the metadata title `"PRHD — Prasana | Developer Portfolio"` is a `<title>` tag, not visual branding.
+## 2) About section cleanup
 
-### 3. `src/app/page.tsx` — Footer
+File: `src/app/page.tsx`
 
-The footer colophon `"> end of log. // PRHD"` is stylistic text. Leave as-is unless you want the SVG logo there too.
+In `ENTRY 001 — About / Signal`, remove this part from the first paragraph:
 
-### 4. Favicon — `src/app/`
+`and exploring some of the latest Cafe's downtown.`
 
-Next.js 14 App Router auto-detects favicon files in the `app/` directory:
+Use this cleaned-up paragraph instead:
 
-- Copy the **cropped** SVG into `src/app/icon.svg` — Next.js will serve it automatically as the site icon.
-- Optionally also provide `src/app/favicon.ico` (32×32 conversion) for legacy browser support.
-- Remove any existing `favicon.ico` if present.
+```tsx
+<p
+  className="text-md leading-relaxed"
+  style={{ color: "var(--color-text-primary)" }}
+>
+  Hi, I&apos;m Prasana. I study Computer Science at the University of
+  Waterloo and Business at Wilfrid Laurier University. I love building
+  things that drive impact and help stakeholders. Currently, I am
+  interning at Munich Re.
+</p>
+```
 
-### 5. Place the Logo File
+Leave the second paragraph as-is unless there is a strong reason to tighten it for flow.
 
-- Copy the cropped SVG to **`/public/logo.svg`** (for the Nav `<img>` to reference).
-- Copy the same cropped SVG to **`src/app/icon.svg`** (for the favicon).
+## 3) Rename and update the personal section
 
----
+File: `src/app/page.tsx`
 
-## Summary
+In `ENTRY 005`, change the title from:
 
-| # | Change | File | What |
-|---|--------|------|------|
-| 0 | **SVG fix** | `logo.svg` | Crop viewBox from `0 0 2666 2666` to `1059 1033 540 600` |
-| 1 | Bug fix | `Nav.tsx` | `href="#"` → `href="/"` |
-| 2 | Logo swap | `Nav.tsx` | Text "PRHD" → `<img src="/logo.svg" />` |
-| 3 | Favicon | `src/app/icon.svg` | Add cropped SVG logo as favicon |
-| 4 | Asset | `/public/logo.svg` | Place cropped logo file here |
-| 5 | Optional | `page.tsx` footer | Replace or keep text "PRHD" |
+```tsx
+title="Beyond the Terminal"
+```
+
+to:
+
+```tsx
+title="Away from the Screen"
+```
+
+Replace the current side annotations with:
+
+```tsx
+<Annotation type="metric" label="Dives logged">
+  120+
+</Annotation>
+<Annotation type="metric" label="Current pursuit">
+  Private pilot licence
+</Annotation>
+<Annotation type="metric" label="Stage background">
+  Regional theatre
+</Annotation>
+```
+
+Replace the lorem ipsum paragraph with:
+
+```tsx
+<p
+  className="text-md leading-relaxed"
+  style={{ color: "var(--color-text-primary)" }}
+>
+  I am usually doing something that gets me out of routine. In the summers,
+  that often means diving, and lately it also means working toward my private
+  pilot licence. I have also spent a big part of my life around public
+  speaking and theatre, with years of performing in regional plays shaping how
+  I communicate and carry myself. Beyond that, I enjoy hiking, travelling, and
+  exploring new places whenever I get the chance.
+</p>
+```
+
+## 4) Deep Dives section cleanup and expansion
+
+Files:
+- `src/app/page.tsx`
+- `src/components/ProjectCard.tsx`
+
+### Required changes
+- Keep the current general card style and spacing.
+- Do **not** add any screenshots, mock visuals, or image placeholders.
+- Remove the visual placeholder block from the featured project cards completely.
+- Add a third featured experience so the section can better represent:
+  - 1 ML experience
+  - 1 SWE experience
+  - 1 Data experience
+
+### ProjectCard component changes
+In `src/components/ProjectCard.tsx`:
+- Remove the left/right visual placeholder block entirely.
+- Remove the `imageAlt` prop if it is no longer used.
+- Keep:
+  - title
+  - context
+  - approach
+  - outcome
+  - tech
+  - metrics
+  - optional link
+- Rework the layout so the content fills the space cleanly without the image column.
+- Keep the current typography and reveal animation style.
+
+### Data source changes
+In `src/app/page.tsx`:
+- Update the `featuredProjects` array so it includes 3 total experiences.
+- Keep the structure consistent with the current UI.
+- No image fields needed if `ProjectCard` no longer uses them.
+
+### Content direction
+Use three experiences that clearly map to:
+- ML
+- SWE
+- Data
+
+The exact experience copy can be updated based on the real resume content, but the UI should be ready for three experiences with no placeholder visuals.
+
+## 5) Add a tabbed resume switcher without changing the overall UI
+
+Files:
+- `src/components/ContactBlock.tsx`
+- optionally create `src/components/ResumeSwitcher.tsx`
+
+### Goal
+Keep the current styling and feel. Do not redesign this area. Just replace the single static resume link with a clean tabbed switcher.
+
+### Desired behavior
+- Separate tabs:
+  - ML
+  - SWE
+  - Data
+- Clicking a tab updates:
+  - the active resume label
+  - the download link
+- Keep the existing visual tone and spacing.
+- No extra images or big redesigns.
+
+### Suggested implementation
+Use either:
+- a small local state block inside `ContactBlock.tsx`, or
+- a dedicated `ResumeSwitcher` component
+
+Suggested resume files in `public/`:
+- `/resume-ml.pdf`
+- `/resume-swe.pdf`
+- `/resume-data.pdf`
+
+Suggested shape:
+
+```tsx
+const resumes = {
+  ml: {
+    label: "Machine Learning",
+    href: "/resume-ml.pdf",
+  },
+  swe: {
+    label: "Software Engineering",
+    href: "/resume-swe.pdf",
+  },
+  data: {
+    label: "Data",
+    href: "/resume-data.pdf",
+  },
+};
+```
+
+### UI direction
+- Keep the existing "Resume" section where it is.
+- Add 3 small tabs above or beside the download link.
+- Keep the same overall style language as the rest of the site.
+- The download CTA should update based on the selected tab.
+- Default tab can be `ML` for now unless there is a better reason to default to another one.
+
+## 6) Things to preserve
+
+Please do **not** change these unless necessary:
+- the overall site theme
+- the current layout structure
+- the existing hero animation behavior
+- the current tone of the site
+- the current spacing system unless needed after removing the project image column
+
+## 7) Optional cleanup items
+
+These are optional but recommended:
+
+### Blog section
+If the blog posts are placeholder-only and not backed by real pages yet, consider hiding that section until the content is real.
+
+### Contact form
+The contact form currently logs to console only. Either:
+- wire it up properly, or
+- simplify the section and rely on direct email + socials for now
+
+## 8) Summary of final requested changes
+
+- Update hero rotating lines
+- Clean up the About paragraph
+- Rename `Beyond the Terminal` to `Away from the Screen`
+- Replace lorem ipsum with the provided personal copy
+- Update the personal side annotations
+- Remove all fake project visual placeholders
+- Add a third featured experience
+- Keep the current UI style
+- Add a separate-tab resume switcher for ML / SWE / Data
+- No pictures for work-related experience cards

@@ -8,9 +8,12 @@ interface TerminalBootProps {
 
 const identities = [
   "diving into data pipelines at Munich Re",
-  "120+ dives deep, still descending",
   "building ML models that move the needle",
-  "analyzing equities before the market opens",
+  "deep in data, deeper in curiosity",
+  "analyzing equities",
+  "planning my next dive trip",
+  "prompting claude code",
+  "120+ dives deep, still descending",
 ];
 
 export default function TerminalBoot({ onComplete }: TerminalBootProps) {
